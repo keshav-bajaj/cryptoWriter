@@ -130,7 +130,7 @@ new cryptoWriter(myElement);
 
 ## `4. cryptoWriter.js Generator`
 
-`If you want to play around with the options or want to generate cryptoWriter code for yourself, head over to the `<a href="./index.html#configure-h3">`Generator.`</a>
+`If you want to play around with the options or want to generate cryptoWriter code for yourself, head over to the `<a href="https://keshav-bajaj.github.io/cryptoWriter/index.html#configure-h3">`Generator.`</a>
 
 ---
 
