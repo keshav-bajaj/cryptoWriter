@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cryptoWriter.js</title>
+    <meta name="author" content="Keshav Bajaj" />
+    <meta
+      name="description"
+      content="A lightweight JavaScript library that renders text in a brilliant style by displaying strings of random characters before the actual text."
+    />
+    <meta name="msvalidate.01" content="4FC67C6E43858D0FED50ED317830F339" />
+    <meta
+      name="google-site-verification"
+      content="K3eFZaGNRg14PDr4sBZNhF9ufLxk8CUMTSSP8-LrgVQ"
+    />
+    <script src="./js/render.js" defer></script>
+    <script src="./src/cryptoWriter.js"></script>
+  </head>
+  <body>
+    <div style="display: none" id="main">
+      <form id="main-form">
+        <p id="lol">randomRounds: <input type="number" id="rounds-span" /></p>
+        <input type="range" min="1" max="25" value="5" id="rounds-slider" />
+        <hr />
+        <p>
+          completionTime:<input type="number" id="time-input" />
+          <span id="time-span"></span>
+        </p>
+        <input type="range" min="1" max="50" value="5" id="time-slider" />
+        <input type="radio" checked value="auto" name="time-select" /><label
+          for="auto"
+          >auto</label
+        >
+        <input type="radio" value="seconds" name="time-select" /><label
+          for="seconds"
+          >seconds</label
+        >
+        <input type="radio" value="chars/second" name="time-select" /><label
+          for="chars/second"
+          >chars/second</label
+        >
+        <hr />
+        <p>
+          delayTime:<input
+            style="width: 80px"
+            type="text"
+            id="delay-input"
+          /><span id="delay-span"></span>
+        </p>
+        <input type="range" min="0" max="30000" value="500" id="delay-slider" />
+        <input
+          type="radio"
+          onclick="changevalue(this)"
+          name="delay-unit"
+          value="seconds"
+        /><label for="seconds">seconds</label>
+        <input
+          type="radio"
+          onclick="changevalue(this)"
+          name="delay-unit"
+          checked
+          value="milliseconds"
+        /><label for="milliseconds">milliseconds</label>
+        <hr />
+        <p>
+          untilDelay:<input
+            style="width: 120px"
+            type="text"
+            id="untildelay-input"
+          />
+        </p>
+        <input type="radio" name="until-delay" checked value="random" /><label
+          for="random"
+          >random</label
+        >
+        <input type="radio" name="until-delay" value="empty" /><label
+          for="empty"
+          >empty</label
+        >
+        <input type="radio" name="until-delay" value="same" /><label for="same"
+          >same</label
+        >
+        <input
+          type="radio"
+          name="until-delay"
+          onclick="clearinput()"
+          value="string"
+        /><label for="string">string</label>
+        <hr />
+        <p>onVisible:</p>
+        <input type="radio" checked name="onvisible" value="true" /><label
+          for="true"
+          >True</label
+        >
+        <input type="radio" name="onvisible" value="false" /><label for="false"
+          >False</label
+        >
+        <hr />
+        <p>allAtOnce:</p>
+        <input type="radio" name="allatonce" value="true" /><label for="true"
+          >True</label
+        >
+        <input type="radio" checked name="allatonce" value="false" /><label
+          for="false"
+          >False</label
+        >
+        <hr />
+        <p>enabledSets:</p>
+        <input type="checkbox" checked class="set" value="letters" /><label
+          for="letters"
+          >Letters</label
+        >
+        <input type="checkbox" checked class="set" value="lettersCaps" /><label
+          for="letterscaps"
+          >Capital Letters</label
+        >
+        <input type="checkbox" checked class="set" value="numbers" /><label
+          for="numbers"
+          >Numbers</label
+        >
+        <input type="checkbox" class="set" value="specialChars" /><label
+          for="specialchars"
+          >Special Characters</label
+        >
+        <hr />
+        <p>customSet:</p>
+        <input type="radio"  name="cset" value="true"><label for="true">Enabled</label>
+        <input type="radio" checked name="cset" value="false"><label for="false">Disabled</label>
+        <br>
+        <div id="cinfo">
+          <p>Separate characters by a comma (,).</p>
+          <div id="custom-div" contenteditable="true">1,2,3,4,5,6</div>
+          <input type="checkbox" name="comma" id="comma"><label for="comma">Add comma(,) to customSet</label>
+        </div>
+        <hr />
+      </form>
+      <div id="btn-div"></div>
+      <textarea spellcheck="false" id="configuration"></textarea>
+    </div>
+  </body>
+</html>
