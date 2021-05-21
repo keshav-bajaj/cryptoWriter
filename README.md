@@ -57,7 +57,7 @@ new cryptoWriter({
 - **`Its default value is set to "auto", which calculates completion time at 5 characters/second.`**
 - **`If you want to set the speed in terms of chars/second, simply put the value as follows replacing "6" with your desired number.`**
 ```javascript
- new  cryptoWriter({
+ new cryptoWriter({
    completionTime:"6chars"  
  });
 ```
@@ -92,7 +92,7 @@ new cryptoWriter({
 | `letters`      | `abcdefghijklmnopqrstuvwxyz`         |
 | `lettersCaps`  | `ABCDEFGHIJKLMNOPQRSTUVWXYZ`         |
 | `numbers`      | `0123456789`                         |
-| `specialChars` | ``!@#$%^&*()-=[]\;`',./~_+{}:"<>?|`` |
+| `specialChars` | ``!@#$%^&*(`)-=[]\|\;',./~_+{}:"<>?``  |
 ---
 ### `2.7 customSet`
 - `Type:Array`
@@ -102,17 +102,20 @@ new cryptoWriter({
 - `Example:`
 
   ```javascript
-  new cryptoWriter(document.queryselector("#myElement"),{
-  customSet:["$","@","%","5","9","3","a","j"]
+  new cryptoWriter(document.querySelector("#myElement"),{
+  customSet:["$","@","%","5","9","3","a","j"],
+  enabledSets:[]
   });
   ```
+- `You can also use customSet along with enabledSets.`  
 
 ### `Using emojis as custom set`
 ```javascript
 var emojis = "😀😃😄😁😆😅😂🤣🥲😊😇🙂🙃😉😌";
 emojis = Array.from(emojis);
-new cryptoWriter(document.queryselector("#myElement"),{
-customSet:emojis
+new cryptoWriter(document.querySelector("#myElement"),{
+customSet:emojis,
+enabledSets:[]
 });
 ```
 ### `2.8 allAtOnce`
